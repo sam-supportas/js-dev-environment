@@ -1,9 +1,18 @@
-//Here we're importing items we'll need. You can add other imports here.
+const Chart = require("chart.js");
 
-//The first function. Remove this.
-const btn = document.querySelector("button");
-btn.onclick = function () {
-  alert("You ran some JavaScript");
-};
+const ctx = document.getElementById('myChart');
 
-//
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: __LABEL__,
+    datasets: __DATA__
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
